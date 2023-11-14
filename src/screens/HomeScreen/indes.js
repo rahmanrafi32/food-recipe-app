@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import { StatusBar } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
 import { Image, ScrollView, Text, TextInput, View } from "react-native";
@@ -6,12 +6,12 @@ import { BellIcon, MagnifyingGlassIcon } from "react-native-heroicons/outline";
 import { heightPercentageToDP as hp } from "react-native-responsive-screen";
 import avatar from "../../../assets/images/avatar.png";
 import Categories from "../../components/Categories";
-import Recipes from '../../components/Recipes';
+import Recipes from "../../components/Recipes";
 
 export default function HomeScreen() {
   const [categories, setCategories] = useState([]);
   const [meals, setMeals] = useState([]);
-  const [activeCategory, setActiveCategory] = useState('Beef');
+  const [activeCategory, setActiveCategory] = useState("Beef");
 
   useEffect(() => {
     getCategories();
@@ -44,12 +44,11 @@ export default function HomeScreen() {
     }
   };
 
-  const handleChangeCategory = category=>{
+  const handleChangeCategory = (category) => {
     getRecipes(category);
     setActiveCategory(category);
     setMeals([]);
-  }
-
+  };
 
   return (
     <View className="flex-1 bg-white">
@@ -101,10 +100,14 @@ export default function HomeScreen() {
         </View>
 
         <View>
-          <Categories categories={categories} activeCategory={activeCategory} handleChangeCategory={handleChangeCategory}/>
+          <Categories
+            categories={categories}
+            activeCategory={activeCategory}
+            handleChangeCategory={handleChangeCategory}
+          />
         </View>
         <View>
-          <Recipes meals={meals} categories={categories}/>
+          <Recipes meals={meals} categories={categories} />
         </View>
       </ScrollView>
     </View>
