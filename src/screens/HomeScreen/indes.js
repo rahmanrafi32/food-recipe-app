@@ -6,6 +6,7 @@ import { BellIcon, MagnifyingGlassIcon } from "react-native-heroicons/outline";
 import { heightPercentageToDP as hp } from "react-native-responsive-screen";
 import avatar from "../../../assets/images/avatar.png";
 import Categories from "../../components/Categories";
+import Recipes from '../../components/Recipes';
 
 export default function HomeScreen() {
   const [categories, setCategories] = useState([]);
@@ -101,6 +102,9 @@ export default function HomeScreen() {
 
         <View>
           <Categories categories={categories} activeCategory={activeCategory} handleChangeCategory={handleChangeCategory}/>
+        </View>
+        <View>
+          <Recipes meals={meals} categories={categories}/>
         </View>
       </ScrollView>
     </View>

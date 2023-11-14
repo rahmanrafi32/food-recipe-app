@@ -1,7 +1,8 @@
 import React from "react";
-import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 import Animated, { FadeInDown } from "react-native-reanimated";
 import { heightPercentageToDP as hp } from "react-native-responsive-screen";
+import { CachedImage } from "../../helper/image";
 
 export default function Categories({
   categories,
@@ -30,8 +31,8 @@ export default function Categories({
                     : "rounded-full p-[6px] bg-black/10"
                 }
               >
-                <Image
-                  source={{ uri: category.strCategoryThumb }}
+                <CachedImage
+                  uri={category.strCategoryThumb}
                   style={{ width: hp(6), height: hp(6) }}
                   className={"rounded-full"}
                 />
