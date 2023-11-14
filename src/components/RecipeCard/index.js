@@ -23,7 +23,7 @@ export default function RecipeCard({ item, index, navigation }) {
         onPress={() => navigation.navigate("RecipeDetail", { ...item })}
       >
         <CachedImage
-          uri = {item.strMealThumb}
+          uri={item.strMealThumb}
           style={{
             width: "100%",
             height: index % 3 == 0 ? hp(25) : hp(35),
