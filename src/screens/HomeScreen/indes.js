@@ -83,7 +83,7 @@ export default function HomeScreen() {
             </Text>
           </View>
 
-          <View className="mx-4 flex-row items-center rounded-full bg-black/5 p-[6px]">
+          <View className="flex-row items-center rounded-full bg-black/5 p-[6px]">
             <TextInput
               placeholder="Search recipe"
               placeholderTextColor={"gray"}

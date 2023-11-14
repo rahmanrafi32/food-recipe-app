@@ -1,14 +1,12 @@
 import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
-import * as Linking from "expo-linking";
 import { StatusBar } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
 import {
-    Platform,
     ScrollView,
     Text,
     TouchableOpacity,
-    View,
+    View
 } from "react-native";
 import {
     ChevronLeftIcon,
@@ -27,7 +25,6 @@ import Loading from "../../components/Loading";
 import { CachedImage } from "../../helper/image";
 
 export default function RecipeDetailsScreen(props) {
-  const ios = Platform.OS == "ios";
   let item = props.route.params;
   const [isFavourite, setIsFavourite] = useState(false);
   const navigation = useNavigation();
@@ -62,19 +59,6 @@ export default function RecipeDetailsScreen(props) {
     }
 
     return indexes;
-  };
-
-  const handleOpenLink = (url) => {
-    Linking.openURL(url);
-  };
-
-  const getYoutubeVideoId = (url) => {
-    const regex = /[?&]v=([^&]+)/;
-    const match = url.match(regex);
-    if (match && match[1]) {
-      return match[1];
-    }
-    return null;
   };
 
   return (
@@ -296,7 +280,7 @@ export default function RecipeDetailsScreen(props) {
                 Instructions
               </Text>
               <Text style={{ fontSize: hp(2) }} className="text-neutral-700">
-                {meal?.strInstructions} 
+                {meal?.strInstructions}
               </Text>
             </Animated.View>
           </View>

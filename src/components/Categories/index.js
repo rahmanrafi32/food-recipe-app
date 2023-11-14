@@ -11,6 +11,12 @@ export default function Categories({
 }) {
   return (
     <Animated.View entering={FadeInDown.duration(500).springify()}>
+      <Text
+        style={{ fontSize: hp(3) }}
+        className="mx-4 mb-2 font-semibold text-neutral-600"
+      >
+        Categories
+      </Text>
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
