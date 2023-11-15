@@ -28,7 +28,7 @@ export default function WelcomeScreen() {
 
   return (
     <View className="flex-1 justify-center items-center space-y-10 bg-amber-500">
-      <StatusBar style="light" />
+      <StatusBar style="light" hidden={true}/>
       <Animated.View
         className="bg-white/20 rounded-full"
         style={{ padding: outerRing }}
@@ -46,12 +46,6 @@ export default function WelcomeScreen() {
           style={{ fontSize: hp(7) }}
         >
           Foody
-        </Text>
-        <Text
-          className="font-medium text-white tracking-widest"
-          style={{ fontSize: hp(4.5) }}
-        >
-          Food is always right
         </Text>
       </View>
     </View>
