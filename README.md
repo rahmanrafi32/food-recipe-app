@@ -4,10 +4,10 @@ Foody is a recipe sharing app. Users can find different kind of food recipes her
 
 # Sceenshots
 
-![Alt text](image.png)
+![Alt text](./assets/images/image.png)
 
-![Alt text](image-3.png)
+![Alt text](./assets/images/image-3.png)
 
-![Alt text](image-1.png)
+![Alt text](./assets/images/image-1.png)
 
-![Alt text](image-2.png)
+![Alt text](./assets/images/image-2.png)
