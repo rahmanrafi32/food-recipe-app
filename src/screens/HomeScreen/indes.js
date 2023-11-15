@@ -12,6 +12,7 @@ export default function HomeScreen() {
   const [categories, setCategories] = useState([]);
   const [meals, setMeals] = useState([]);
   const [activeCategory, setActiveCategory] = useState("Beef");
+  const [searchMeal, setSearchMeal] = useState("");
 
   useEffect(() => {
     getCategories();
@@ -48,6 +49,19 @@ export default function HomeScreen() {
     getRecipes(category);
     setActiveCategory(category);
     setMeals([]);
+  };
+
+  const handleSearchMeal = async () => {
+    try {
+      const response = await axios.get(
+        `https://themealdb.com/api/json/v1/1/search.php?s=${searchMeal}`
+      );
+      if (response && response.data) {
+        setMeals(response.data.meals);
+      }
+    } catch (err) {
+      console.log("error: ", err.message);
+    }
   };
 
   return (
@@ -88,6 +102,8 @@ export default function HomeScreen() {
               placeholderTextColor={"gray"}
               style={{ fontSize: hp(1.7) }}
               className="flex-1 text-base mb-1 pl-3 tracking-wider"
+              onChangeText={(text) => setSearchMeal(text)}
+              onSubmitEditing={handleSearchMeal}
             />
             <View className="bg-white rounded-full p-3">
               <MagnifyingGlassIcon
